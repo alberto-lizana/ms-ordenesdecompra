@@ -13,7 +13,8 @@ import com.albertolizana.ms_ordenes_de_compra.model.HistorialEstados;
 @Repository
 public interface HistorialEstadosRepository extends JpaRepository<HistorialEstados, Long>{
 
-    @Query("""
+    @Query
+    ("""
         SELECT he FROM HistorialEstados he
         JOIN FETCH he.estadoCompra
         JOIN FETCH he.compra c
@@ -21,7 +22,8 @@ public interface HistorialEstadosRepository extends JpaRepository<HistorialEstad
     """)
     List<HistorialEstados> findAllWithRelations();
 
-    @Query("""
+    @Query
+    ("""
         SELECT he FROM HistorialEstados he
         JOIN FETCH he.estadoCompra
         JOIN FETCH he.compra c
