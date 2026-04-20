@@ -50,15 +50,3 @@ public class Compra {
     private List<HistorialEstados> historialEstados = new ArrayList<>();
 
 }
-
-/*
-    @ManyToOne(fetch=FetchType.LAZY, optional=false)
-    @JoinColumn(name="idCliente", nullable=false)
-    Cliente cliente;
-
-    @OneToMany(mappedBy="compra", cascade=CascadeType.ALL, orphanRemoval=true)
-    private List<DetalleCompra> detalles = new ArrayList<>();
-
-    @OneToMany(mappedBy="compra", cascade=CascadeType.ALL, orphanRemoval=true)
-    private List<HistorialEstados> historialEstados = new ArrayList<>();
-*/
