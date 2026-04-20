@@ -143,7 +143,7 @@ public class HistorialEstadosServiceImpl implements HistorialEstadosService {
                                                     .compra(ultimoHistorial.getCompra())
                                                     .estadoCompra(nuevoEstado)
                                                     .fechaInicioEstado(ahora)
-                                                    .fechaTerminoEstado(null)
+                                                    .fechaTerminoEstado(nuevoEstado.getNombreEstado().equals("CANCELADO") ? ahora : null)
                                                     .build();
 
         historialEstadosRepository.save(nuevoHistorial);
