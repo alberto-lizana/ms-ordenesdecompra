@@ -42,6 +42,7 @@ public class Cliente {
     private boolean estado;
 
     @OneToMany(mappedBy="cliente", cascade=CascadeType.ALL, orphanRemoval=true)
+    @Builder.Default
     private List<Compra> compras = new ArrayList<>();    
 
 }

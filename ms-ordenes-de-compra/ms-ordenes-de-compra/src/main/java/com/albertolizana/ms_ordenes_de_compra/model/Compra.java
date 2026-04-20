@@ -44,9 +44,11 @@ public class Compra {
     Cliente cliente;
 
     @OneToMany(mappedBy="compra", cascade=CascadeType.ALL, orphanRemoval=true)
+    @Builder.Default
     private List<DetalleCompra> detalles = new ArrayList<>();
 
     @OneToMany(mappedBy="compra", cascade=CascadeType.ALL, orphanRemoval=true)
+    @Builder.Default
     private List<HistorialEstados> historialEstados = new ArrayList<>();
 
 }
