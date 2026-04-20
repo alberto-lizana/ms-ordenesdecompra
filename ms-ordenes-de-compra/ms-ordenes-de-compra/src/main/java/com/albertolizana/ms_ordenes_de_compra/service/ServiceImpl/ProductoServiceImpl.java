@@ -127,13 +127,4 @@ public class ProductoServiceImpl implements ProductoService {
                             .build())
                         .build();
     }
-
-    @Override
-    public void eliminarProducto(Long id) {
-        if(!productoRepository.existsById(id)){
-            throw new ResourceNotFoundException("No se ha encontrado el producto con id " + id);
-        }
-        productoRepository.deleteById(id);
-    }
-
 }

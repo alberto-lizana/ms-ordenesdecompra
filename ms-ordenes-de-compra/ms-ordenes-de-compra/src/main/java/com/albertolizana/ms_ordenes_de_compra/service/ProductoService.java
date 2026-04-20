@@ -10,6 +10,4 @@ public interface ProductoService {
     public List<ProductoResponseDto> getProductos(); 
     public ProductoResponseDto getProducto(Long id); 
     public ProductoResponseDto modificarProducto(ProductoRequestDto dto);
-    public void eliminarProducto(Long id);
-
 }
