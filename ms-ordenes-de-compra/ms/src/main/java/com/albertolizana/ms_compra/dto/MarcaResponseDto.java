@@ -1,0 +1,24 @@
+package com.albertolizana.ms_compra.dto;
+
+import org.springframework.hateoas.RepresentationModel;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@NoArgsConstructor
+@AllArgsConstructor        
+@Getter
+@Setter
+@Builder
+public class MarcaResponseDto extends RepresentationModel<MarcaResponseDto> {
+
+    private Long idMarca;
+    private String nombre;
+
+}
