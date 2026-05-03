@@ -63,7 +63,6 @@ public class HistorialEstadosController {
     @PostMapping("/crear")
     public ResponseEntity<HistorialEstadoResponseDto> crearEstadoHistorial(@Valid @RequestBody CrearNuevoHistorialRequestDto dto) {
         HistorialEstadoResponseDto he = historialEstadosService.crearEstadoHistorial(dto);
-        agregarLinksHistorialEstados(he);
         return ResponseEntity.status(HttpStatus.CREATED).body(he);
     }
 
@@ -84,10 +83,7 @@ public class HistorialEstadosController {
         historialEstado.add(linkTo(methodOn(HistorialEstadosController.class)
                 .getHistoricoCompra(historialEstado.getCompra().getIdCompra()))
                 .withRel("compra-historial"));
-        
-        historialEstado.add(linkTo(methodOn(HistorialEstadosController.class)
-                .crearEstadoHistorial(null))
-                .withRel("create"));
+
     }
 
 }

@@ -47,7 +47,6 @@ public class ProductoController {
     @PutMapping("/modificar")
     public ResponseEntity<ProductoResponseDto> modificarProducto(@Valid @RequestBody ProductoRequestDto dto){
         ProductoResponseDto p = productoService.modificarProducto(dto);
-        agregarLinksProducto(p);
         return ResponseEntity.ok(p);
     }
 
@@ -61,8 +60,5 @@ public class ProductoController {
             .getProductos())
             .withRel("collection"));
 
-        producto.add(linkTo(methodOn(ProductoController.class)
-            .modificarProducto(null))
-            .withRel("modify"));
     }
 }

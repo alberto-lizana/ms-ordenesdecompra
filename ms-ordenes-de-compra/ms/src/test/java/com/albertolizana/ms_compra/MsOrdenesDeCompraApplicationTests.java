@@ -1,4 +1,4 @@
-package com.albertolizana.ms_ordenes_de_compra;
+package com.albertolizana.ms_compra;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

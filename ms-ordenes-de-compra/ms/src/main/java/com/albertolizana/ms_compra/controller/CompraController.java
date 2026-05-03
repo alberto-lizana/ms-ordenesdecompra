@@ -47,7 +47,6 @@ public class CompraController {
     @PostMapping("/realizar")
     public ResponseEntity<CompraResponseDto> crearCompra(@Valid @RequestBody CompraRequestDto dto){
         CompraResponseDto c = compraService.crearCompra(dto);
-        agregarLinksCompra(c);
         return ResponseEntity.status(HttpStatus.CREATED).body(c);
     };
 
@@ -61,8 +60,5 @@ public class CompraController {
             .getCompras())
             .withRel("collection"));
 
-        compra.add(linkTo(methodOn(CompraController.class)
-            .crearCompra(null))
-            .withRel("create"));  
     }
 }
