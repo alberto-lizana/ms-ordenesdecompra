@@ -44,15 +44,16 @@ public class CompraControllerTest {
 
 
     // Lista de Productos ficticia
-    List<ProductoCompraRequestDto> productosUno;
+    private List<ProductoCompraRequestDto> productosUno;
 
-    List<ProductoCompraRequestDto> productosDos;
+    private List<ProductoCompraRequestDto> productosDos;
 
-    List<ProductoCompraRequestDto> productosTres;
+    private List<ProductoCompraRequestDto> productosTres;
     
     // Request
     private CompraRequestDto pedidoUno;
     private CompraRequestDto pedidoDos;
+    private CompraRequestDto pedidoTres;
 
     // Response
 	private CompraResponseDto responseCompraUno;
@@ -117,6 +118,11 @@ public class CompraControllerTest {
                 .build();
 
         pedidoDos = CompraRequestDto.builder()
+                .idCliente(1L)
+                .productos(productosDos)
+                .build();                
+
+        pedidoTres = CompraRequestDto.builder()
                 .idCliente(2L)
                 .productos(productosTres)
                 .build();

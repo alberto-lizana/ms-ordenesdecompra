@@ -60,14 +60,6 @@ public class ClienteController {
         cliente.add(linkTo(methodOn(ClienteController.class)
                 .getClientes())
                 .withRel("collection"));
-
-        cliente.add(linkTo(methodOn(ClienteController.class)
-                .borrarClienteLogico(cliente.getIdCliente()))
-                .withRel("deactivate"));
-
-        cliente.add(linkTo(methodOn(ClienteController.class)
-                .borrarClienteFisico(cliente.getIdCliente()))
-                .withRel("delete"));
     }
 }
 

@@ -69,7 +69,7 @@ public class TipoProductoControllerTest {
 				.andExpect(jsonPath("$").isArray())
 				.andExpect(jsonPath("$", hasSize(2)))
 				.andExpect(jsonPath("$[0].nombre").value("ALIMENTO"))
-				.andExpect(jsonPath("$[1].").value("HIGIENE"))                
+				.andExpect(jsonPath("$[1].nombre").value("HIGIENE"))                
 				.andExpect(jsonPath("$[0].idTipoProducto").value(1))
 				.andExpect(jsonPath("$[1].idTipoProducto").value(2));
 
@@ -82,7 +82,7 @@ public class TipoProductoControllerTest {
 
         when(tipoProductoService.getTipoProducto(1L)).thenReturn(productoUno);
 
-        mockMvc.perform(get("/tipo_producto/all")
+        mockMvc.perform(get("/tipo_producto/{id}", 1)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 

@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.hasSize;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -40,7 +40,7 @@ class ClienteControllerTest {
 	private ClienteResponseDto clienteDos;
 	private List<ClienteResponseDto> usuarios;
 
-	@BeforeAll
+	@BeforeEach
 	void setUp() {
         clienteUno = ClienteResponseDto.builder()
                 .idCliente(1L)
